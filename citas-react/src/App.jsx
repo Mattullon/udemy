@@ -1,17 +1,17 @@
-import Formulario from "./components/Formulario"
-import Header from "./components/Header"
-import Listado from "./components/Listado"
-function App() {
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Home from "./routes/Home"
+import Lavadero from "./routes/Lavadero"
+import Odonto from "./routes/Odonto"
 
+const App = () => {
   return (
-    <div className="container mx-auto mt-20">
-    <Header/>
-      <div className="mt-12 md:flex ">
-        <Formulario/>
-        <Listado/>
-
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/odonto" element={<Odonto />}></Route>
+        <Route path="/lavadero" element={<Lavadero />}></Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
